@@ -2,6 +2,42 @@
 
 An attempt at standardising an iOS kernel r/w API.
 
+
+## 간단한 사용법
+- macbook에서 실행
+  
+```
+make all
+make deb
+
+scp -P 1115 libkrw_1.1.1_iphoneos-arm64.deb	 root@localhost:/tmp
+
+ssh -p 1115 root@localhost
+```
+
+- ios에서 실행
+
+```
+dpkg -i libkrw_1.1.1_iphoneos-arm64.deb	
+exit
+```
+
+- macbook에서 실행
+
+```
+cd test
+make
+scp -P 1115 test	 root@localhost:/tmp
+
+ssh -p 1115 root@localhost
+```
+
+- ios 에서 실행
+
+```
+./test
+```
+
 ### Background
 
 Under Mach/Darwin/XNU, task ports are an API that, among other things, let you read and write memory of other processes. The idea is that every process has such a task port, even the kernel - referred to as tfp0 (from the `task_for_pid(0)` call that would historically yield that port).  
