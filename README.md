@@ -2,6 +2,8 @@
 
 An attempt at standardising an iOS kernel r/w API.
 
+deb 생성 및 실행
+
 
 ## 간단한 사용법
 - macbook에서 실행
